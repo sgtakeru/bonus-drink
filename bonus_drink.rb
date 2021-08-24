@@ -1,6 +1,7 @@
 class BonusDrink
   def self.total_count_for(amount)
-    extras = (0..(amount / 2)).map{|b| [b,b] }.flatten.unshift(0)
-    amount + extras[amount]
+    return 0 if amount.zero?
+    extras = (amount - 1) / 2
+    amount + extras
   end
 end
